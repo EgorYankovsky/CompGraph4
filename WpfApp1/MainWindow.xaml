@@ -1,0 +1,18 @@
+﻿<Window x:Name="MyWindow" x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:glWpfControl="clr-namespace:OpenTK.Wpf;assembly=GLWpfControl"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="850" SizeChanged="WindowChanged">
+    <Grid>
+        <glWpfControl:GLWpfControl x:Name="OpenTkControl" Margin="10,10,190,10" Render="OnRenderRun" MouseWheel="MouseWheel_Control"/>
+        <CheckBox x:Name="SplineCheckbox" Content="Сплайн" HorizontalAlignment="Left" Height="21" Margin="690,15,0,0" VerticalAlignment="Top" Width="106" Foreground="Black" Checked="SplineCheckbox_Checked" Unchecked="SplineCheckbox_Unhecked" IsChecked="True"/>
+        <CheckBox x:Name="DerivativeCheckbox" Content="Производная" HorizontalAlignment="Left" Height="21" Margin="690,55,0,0" VerticalAlignment="Top" Width="106" Foreground="Black" Unchecked="DerivativeCheckbox_Unhecked" Checked="DerivativeCheckbox_Checked"/>
+        <CheckBox x:Name="SplineTangentialCheckbox" Content="Касательная" HorizontalAlignment="Left" Height="21" Margin="690,95,0,0" VerticalAlignment="Top" Width="106" Foreground="Black" Unchecked="SplineTangentialCheckbox_Unchecked" Checked="SplineTangentialCheckbox_Checked"/>
+        <CheckBox x:Name="PrimalCheckbox" Content="Первообразная" HorizontalAlignment="Left" Height="21" Margin="690,135,0,0" VerticalAlignment="Top" Width="120" Foreground="Black" Unchecked="PrimalCheckbox_Unhecked" Checked="PrimalCheckbox_Checked"/>
+        <CheckBox x:Name="SplineSquareCheckbox" Content="Площадь" HorizontalAlignment="Left" Height="21" Margin="690,175,0,0" VerticalAlignment="Top" Width="120" Foreground="Black" Unchecked="SplineSquareCheckbox_Unchecked" Checked="SplineSquareCheckbox_Checked"/>
+    </Grid>
+</Window>
