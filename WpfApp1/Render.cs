@@ -12,33 +12,34 @@ namespace WpfApp1;
 
 public class Render
 {
-   private GLWpfControl _control;
+   private readonly GLWpfControl _control;
    
-   private Color _backGroundColor = Color.White;
+   private readonly Color _backGroundColor = Color.White;
+           
+   private readonly Color _meshColor = Color.LightGray;
 
-   private Color _meshColor = Color.FloralWhite;
+   private readonly Color _axisColor = Color.Gray;
 
-   private Color _pointColor = Color.Black;
+   private readonly Color _pointColor = Color.Black;
 
-   private Color _splineColor = Color.DarkRed;
+   private readonly Color _splineColor = Color.DarkRed;
 
-   private Color _derivativeColor = Color.DarkGreen;
+   private readonly Color _derivativeColor = Color.DarkGreen;
 
-   private Color _primalColor = Color.DarkBlue;
+   private readonly Color _primalColor = Color.DarkBlue;
 
    public readonly double ZoomIn = 1.25;
 
    public readonly double ZoomOut = 1.25;
 
-   private int _cellSize = 1;
+   private readonly int _cellSize = 1;
 
-   private double xl, yl;
+   private readonly double xl, yl;
 
    public int DrawMode { get; set; }
 
-   // Check mistake.
-   private double xm { get { return xl + _control.ActualWidth; } }
-   private double ym { get { return yl + _control.ActualHeight; } }
+   private double Xm { get { return xl + _control.ActualWidth; } }
+   private double Ym { get { return yl + _control.ActualHeight; } }
 
    public double Scale = 30f;
    public double TranslateX = 0;
@@ -119,18 +120,18 @@ public class Render
    {
       GL.LineWidth(1);
       GL.Color3(_meshColor);
-      GL.Begin(PrimitiveType.Points);
+      GL.Begin(PrimitiveType.Lines);
 
-      for (int i = (int)(xl - xl % _cellSize); i < xm + xm % _cellSize; i += _cellSize)
+      for (int i = (int)(xl - xl % _cellSize); i < Xm + Xm % _cellSize; i += _cellSize)
       {
          GL.Vertex2(i, yl);
-         GL.Vertex2(i, ym);
+         GL.Vertex2(i, Ym);
       }
 
-      for (int i = (int)(yl - yl % _cellSize); i < ym + ym % _cellSize; i += _cellSize)
+      for (int i = (int)(yl - yl % _cellSize); i < Ym + Ym % _cellSize; i += _cellSize)
       {
-         GL.Vertex2(i, yl);
-         GL.Vertex2(i, ym);
+         GL.Vertex2(xl, i);
+         GL.Vertex2(Xm, i);
       }
       GL.End();
    }
@@ -139,14 +140,14 @@ public class Render
    public void DrawAxis()
    {
       GL.LineWidth(3);
-      GL.Color3(_meshColor);
-      GL.Begin(PrimitiveType.Points);
+      GL.Color3(_axisColor);
+      GL.Begin(PrimitiveType.Lines);
 
       GL.Vertex2(xl, 0);
-      GL.Vertex2(xm, 0);
+      GL.Vertex2(Xm, 0);
 
       GL.Vertex2(0, yl);
-      GL.Vertex2(0, ym);
+      GL.Vertex2(0, Ym);
       GL.End();
    }
 

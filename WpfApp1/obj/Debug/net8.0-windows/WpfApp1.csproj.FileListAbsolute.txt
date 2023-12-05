@@ -36,3 +36,4 @@ D:\CodeRepos\CS\CompGraph\PZ4\Practice4\WpfApp1\bin\Debug\net8.0-windows\runtime
 D:\CodeRepos\CS\CompGraph\PZ4\Practice4\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.AssemblyReference.cache
 D:\CodeRepos\CS\CompGraph\PZ4\Practice4\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.CopyComplete
 D:\CodeRepos\CS\CompGraph\PZ4\Practice4\WpfApp1\bin\Debug\net8.0-windows\GLWpfControl.dll
+D:\CodeRepos\CS\CompGraph\PZ4\Practice4\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.sourcelink.json
